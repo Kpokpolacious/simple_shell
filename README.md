@@ -103,6 +103,6 @@ write (man 2 write)
 - cmd.c - it finds the command the user entered.
 - execute.c - execute the command.
 
-##AUTHORS
+## AUTHORS
 **Raphael Nedolisa** ***@nedolisarahael@gmail.com***
 **Samuel Wanjala** ***@christophersamim@gmail.com***
