@@ -105,4 +105,4 @@ write (man 2 write)
 
 ##AUTHORS
 **Raphael Nedolisa** ***@nedolisarahael@gmail.com***
-**Samuel Wanjala**
+**Samuel Wanjala** ***@christophersamim@gmail.com***
