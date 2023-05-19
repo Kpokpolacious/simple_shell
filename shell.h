@@ -36,7 +36,6 @@
 
 extern char **environ;
 
-
 /**
  * struct liststr - singly linked list
  * @num: the number field

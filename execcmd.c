@@ -160,7 +160,7 @@ int check_error_cmd(char *dir, data_shell *datash)
  * @datash: data relevant (args and input)
  * Return: 1 on success.
  */
-int cmd_exec(data_shell *datash)
+int execcmd(data_shell *datash)
 {
 	pid_t pd;
 	pid_t wpd;
