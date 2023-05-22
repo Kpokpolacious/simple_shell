@@ -1,34 +1,23 @@
-#include "shell.h"
+#include <stdlib.h>
 
-#include "config.h"
-
-#include "bashtypes.h"
 #ifndef _MINIX
 #  include <sys/param.h>
 #endif
-#include "posixstat.h"
 
 #if defined (HAVE_UNISTD_H)
 #  include <unistd.h>
 #endif
 
-#include "filecntl.h"
-#include "bashansi.h"
 #include <stdio.h>
-#include "chartypes.h"
 #include <errno.h>
 
-#include "bashintl.h"
-
 #include "shell.h"
-#include "test.h"
-
-#include <tilde/tilde.h>
 
 #if !defined (errno)
 extern int errno;
 #endif /* !errno */
 
+extern char **environ;
 extern int expand_aliases;
 extern int interrupt_immediately;
 extern int interactive_comments;
@@ -104,15 +93,15 @@ int legal_number (string, result)
 /* Return 1 if this token is a legal shell `identifier'; that is, it consists
  * solely of letters, digits, and underscores, and does not begin with a
  * digit. */
-int legal_identifier (name)
+int legal_identifier (hsh)
 {
-	char *name;
+	char *hsh;
 	register char *s;
 	unsigned char c;
 
-	if (!name || !(c = *name) || (legal_variable_starter (c) == 0))
+	if (!hsh || !(c = *hsh) || (legal_variable_starter (c) == 0))
 		return (0);
-	for (s = name + 1; (c = *s) != 0; s++)
+	for (s = hsh + 1; (c = *s) != 0; s++)
 	{
 		if (legal_variable_char (c) == 0;
 		return (0);
@@ -175,9 +164,8 @@ int assignment (string, flags)
 		/* Variable names in assignment statements may contain only letters,
 		 * digits, and `_'. */
 		if (legal_variable_char (c) == 0)
-								      	return (0);
-
-							            indx++;
-								        }
-		    return (0);
+			return (0);
+		indx++;
+	}
+	return (0);
 }

@@ -8,12 +8,12 @@
  *
  * Return: EXIT_SUCCESS.
  */
-int main(int argc, char **argv, char **argev)
+int main(int ac, char **av, char **ev)
 {
 	char *arg = NULL;
 	char **argv = NULL;
 	char temp[120];
-	char bin[6] = "/bin/";
+	char bin[6] = "/bin/ld";
 	size_t len = 0;
 	ssize_t nread;
 	pid_t id;
@@ -52,8 +52,8 @@ int main(int argc, char **argv, char **argev)
 			perror(av[0]);
 		if (id == 0)
 		{
-			if (_strcmp(arg, "env") == 0)
-				printenviron(ev), exit(EXIT_SUCCESS);
+			/*if (_strcmp(arg, "env") == 0)*/
+				/*printenviron(ev), exit(EXIT_SUCCESS);*/
 			if (execve(argv[0], argv, ev) == -1)
 				perror(av[0]), exit(EXIT_FAILURE);
 		}
