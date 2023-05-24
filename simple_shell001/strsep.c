@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <string.h>
 
-char* my_strsep(char** str_ptr, const char* delim)
+/* my_strsep - Extract tokens from *stringp */
+char my_strsep(char *str_ptr, const char **delim)
 {
 	if (*str_ptr == NULL)
 		return (NULL);
@@ -19,7 +20,7 @@ char* my_strsep(char** str_ptr, const char* delim)
 	return (token_start);
 }
 
-int main()
+int main(void)
 {
 	char str[] = "The quick brown fox jumps over the lazy dog";
 	char delim[] = " ";

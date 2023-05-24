@@ -2,25 +2,21 @@
 
 #include <unistd.h>
 
-/**
-
- * main - PID
-
+/*
+ * int main(void) - Entry point of the program.
  *
-
- * Return: Always 0.
-
+ * This function retrieves the parent process ID (PPID) and prints it.
+ * Return: Always 0
  */
 
 int main(void)
-
 {
 
-    pid_t my_pid;
+	pid_t my_pid;
 
-    my_pid = getppid();
+	my_pid = getppid();
 
-    printf("%u\n", my_pid);
+	printf("%u\n", my_pid);
 
-    return (0);
+	return (0);
 }

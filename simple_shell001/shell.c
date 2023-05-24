@@ -8,16 +8,11 @@
 
 #include <sys/wait.h>
 
-/**
-
+/*
  * main - print nos. 1 - 5 and 6 - 10 in child and parent processes
-
  * respectively
-
  *
-
  * Return: 0.
-
  */
 
 int main(void)

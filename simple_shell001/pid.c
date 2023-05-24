@@ -1,26 +1,21 @@
 #include <stdio.h>
 
-#include <unistd.h>
-
-/**
-
- * main - PID
-
+#include <unstd.h>
+/*
+ * int main(void) - Entry point of the program.
  *
-
- * Return: Always 0.
-
- */
+ * This function is where the program execution begins.
+ * Return: Always 0
+*/
 
 int main(void)
-
 {
 
-    pid_t my_pid;
+	pid_t my_pid;
 
-    my_pid = getppid();
+	my_pid = getppid();
 
-    printf("%u\n", my_pid);
+	printf("%u\n", my_pid);
 
-    return (0);
+	return (0);
 }
