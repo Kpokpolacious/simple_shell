@@ -5,44 +5,48 @@
 
 #include <sys/types.h>
 
-int main(void)
+/*
+ * fork - creates a new process by duplicating the calling process
+ * Return: Always 0
+ */
+int main(void) /* Entry point */
 
 {
 
-    pid_t pid;
+	pid_t pid;
 
-    printf("Before fork:\n");
+	printf("Before fork:\n");
 
-    printf("PID = %u, PPID = %u\n", getpid(), getppid());
+	printf("PID = %u, PPID = %u\n", getpid(), getppid());
 
-    pid = fork();
+	pid = fork();
 
-    if (pid == -1)
+	if (pid == -1)
 
-        perror("fork() failure");
+	perror("fork() failure");
 
-    if (pid == 0)
+	if (pid == 0)
 
-    {
+	{
 
-        printf("Before sleep:\nPID = %u, PPID = %u\n", getpid(), getppid());
+	printf("Before sleep:\nPID = %u, PPID = %u\n", getpid(), getppid());
 
-        sleep(10);
+	sleep(10);
 
-        printf("Child process:\n");
+	printf("Child process:\n");
 
-        printf("After sleep:\nPID = %u, PPID = %u\n", getpid(), getppid());
+	printf("After sleep:\nPID = %u, PPID = %u\n", getpid(), getppid());
 
-    }
+	}
 
-    else
+	else
 
-    {
+	{
 
-        printf("Parent process exiting...\n");
+	printf("Parent process exiting...\n");
 
-    }
+	}
 
-    return (0);
+	return (0);
 
 }

@@ -5,16 +5,13 @@
 #include <unistd.h>
 
 /*
-
- * main - print the current environment
-
+ * main - function to  print the current environment
  *
-
  * Return: 0.
-
+ *
  */
 
-int main(void)
+int main(void)	/*is the entry point of the program*/
 
 {
 

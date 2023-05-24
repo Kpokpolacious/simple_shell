@@ -10,24 +10,25 @@ main(int argc, char *argv[])
 
 {
 
-    char *newargv[] = { NULL, "hello", "world", "program", NULL };
+	char *newargv[] = { NULL, "hello", "world", "program", NULL };
 
-    char *newenviron[] = { NULL };
+	char *newenviron[] = { NULL };
 
-    if (argc != 2) {
+	if (argc != 2)
+	{
 
-        fprintf(stderr, "Usage: %s <file-to-exec>\n", argv[0]);
+	fprintf(stderr, "Usage: %s <file-to-exec>\n", argv[0]);
 
-        exit(EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 
-    }
+	}
 
-    newargv[0] = argv[1];
+	newargv[0] = argv[1];
 
-    execve(argv[1], newargv, newenviron);
+	execve(argv[1], newargv, newenviron);
 
-    perror("execve");   /* execve() returns only on error */
+	perror("execve");	/* execve() returns only on error */
 
-    exit(EXIT_FAILURE);
+	exit(EXIT_FAILURE);
 
 }
